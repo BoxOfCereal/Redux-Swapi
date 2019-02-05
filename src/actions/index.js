@@ -15,11 +15,12 @@ export function fetchPeople() {
     dispatch({ type: FETCHING });
     axios
       .get(`https://swapi.co/api/people/`)
-      .then(response => {
-        console.log(response);
+      .then(({ data: { results } }) => {
+        //nested destructering
+        console.log(results);
         dispatch({
           type: SUCCESS,
-          payload: response
+          payload: results
         });
       })
       .catch(error => {

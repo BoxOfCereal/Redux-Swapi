@@ -8,18 +8,17 @@ import { fetchPeople } from "../actions";
 class CharacterListView extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
 
   componentDidMount() {
     // call our action
     this.props.fetchPeople();
-    console.log(this.props);
   }
 
   render() {
     if (this.props.fetching) {
       // return something here to indicate that you are fetching data
+      <p>FETCHING DATA...</p>;
     }
     return (
       <div className="CharactersList_wrapper">
